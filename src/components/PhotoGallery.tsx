@@ -44,6 +44,8 @@ export function PhotoGallery() {
     }
   }, []);
   
+  // Removed images: "Social skills development", "Children doing water play", "Child playing in colorful tunnel", and any slides with no picture.
+  // Kept only main classroom and candid photos where heads are not cut off.
   const galleryImages = [
     {
       src: "/lovable-uploads/76340a11-bb0a-43de-8a24-d431853848aa.png",
@@ -56,19 +58,8 @@ export function PhotoGallery() {
     {
       src: "/lovable-uploads/6e26cb94-68a3-4b62-823e-e6b9cab3b359.png",
       alt: "Visit us today"
-    },
-    {
-      src: "/lovable-uploads/c194cb0d-498a-4640-bb4f-ce4d66983989.png",
-      alt: "Social skills development"
-    },
-    {
-      src: "/lovable-uploads/1f7ad6d6-296b-45c7-86b7-8228e7818850.png",
-      alt: "Child playing in colorful tunnel"
-    },
-    {
-      src: "/lovable-uploads/95a585d2-8a82-45c1-8e2f-d94e2471cb8f.png",
-      alt: "Children doing water play activity"
     }
+    // Retained only the slides where people are visible and heads are not cut off.
   ];
   
   return (
@@ -84,7 +75,7 @@ export function PhotoGallery() {
                   <img 
                     src={image.src} 
                     alt={image.alt} 
-                    className="w-full h-64 object-cover"
+                    className="w-full h-64 object-cover object-top"
                   />
                 </div>
               </div>
