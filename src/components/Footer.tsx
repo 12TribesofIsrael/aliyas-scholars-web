@@ -1,4 +1,3 @@
-
 import { Facebook, Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
 
 export function Footer() {
@@ -34,7 +33,7 @@ export function Footer() {
               </li>
               <li className="flex items-start">
                 <Mail className="w-5 h-5 mr-3 mt-1 text-daycare-red" />
-                <span>info@aliyaslittlescholars.com</span>
+                <span>help@aliyaslittlescholars.com</span>
               </li>
             </ul>
           </div>
