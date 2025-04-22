@@ -1,3 +1,4 @@
+
 import { Facebook, Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
 
 export function Footer() {
@@ -63,14 +64,18 @@ export function Footer() {
         
         <div className="flex flex-wrap justify-center gap-6 mb-8">
           <a 
-            href="#" 
+            href="https://www.facebook.com/aliyalittle.scholarsdaycare" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors"
             aria-label="Facebook"
           >
             <Facebook className="w-5 h-5" />
           </a>
           <a 
-            href="#" 
+            href="https://www.instagram.com/aliyaslittlescholars" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors"
             aria-label="Instagram"
           >
