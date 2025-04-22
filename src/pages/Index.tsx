@@ -1,13 +1,58 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from 'react';
+import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
+import { AboutUs } from "@/components/AboutUs";
+import { ProgramHighlights } from "@/components/ProgramHighlights";
+import { PhotoGallery } from "@/components/PhotoGallery";
+import { HoursLocations } from "@/components/HoursLocations";
+import { EbookSection } from "@/components/EbookSection";
+import { Testimonials } from "@/components/Testimonials";
+import { Accreditations } from "@/components/Accreditations";
+import { EnrollmentForm } from "@/components/EnrollmentForm";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
+  // Animation on scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const elements = document.querySelectorAll(".animate-on-scroll");
+      elements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight - 100;
+        
+        if (isVisible) {
+          element.classList.add("visible");
+        }
+      });
+    };
+    
+    // Initial check
+    handleScroll();
+    
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+    
+    // Cleanup
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen bg-white">
+      <Header />
+      <Hero />
+      <AboutUs />
+      <ProgramHighlights />
+      <PhotoGallery />
+      <HoursLocations />
+      <EbookSection />
+      <Testimonials />
+      <Accreditations />
+      <EnrollmentForm />
+      <Footer />
+    </main>
   );
 };
 
