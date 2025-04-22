@@ -1,3 +1,4 @@
+
 import { Button } from "./ui/button";
 import { scrollToElement } from "@/lib/utils";
 
@@ -9,11 +10,10 @@ export function Hero() {
         <img 
           src="/lovable-uploads/4118629d-1857-4843-9b27-ea6fc399a326.png" 
           alt="Children playing at Aliyas Little Scholars Daycare" 
-          className="w-full h-full object-cover object-top md:object-center"
-          // object-top for mobile (show heads), center for md+ for best cropping
+          className="w-full h-full object-cover object-top"
+          // Prioritize showing the top of the image to capture full heads
         />
       </div>
-      
       
       <div className="container relative z-20 text-white">
         <div className="max-w-2xl py-16 animate-fade-in">
