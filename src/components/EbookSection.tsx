@@ -24,6 +24,7 @@ export function EbookSection() {
               <Button 
                 size="lg"
                 className="bg-daycare-yellow text-daycare-blue hover:bg-daycare-yellow/90"
+                onClick={() => window.open('https://bornmadebossesapparel.com/products/how-to-open-and-operate-a-childcare-center', '_blank')}
               >
                 <Book className="mr-2 h-5 w-5" />
                 Buy Now

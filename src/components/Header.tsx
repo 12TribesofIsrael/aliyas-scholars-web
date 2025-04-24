@@ -13,6 +13,11 @@ export function Header() {
             (267) 437-8766
           </a>
         </div>
+        <div className="hidden md:block">
+          <h1 className="text-2xl font-poppins font-bold text-daycare-blue">
+            Aliyas Little Scholars
+          </h1>
+        </div>
         <Button 
           variant="default" 
           className="bg-daycare-red hover:bg-daycare-red/90 text-white"
