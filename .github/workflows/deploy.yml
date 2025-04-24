@@ -1,6 +1,9 @@
+
 name: Deploy to GitHub Pages
 
 on:
+  push:
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
@@ -22,14 +25,13 @@ jobs:
       - name: Build the site
         run: npm run build
 
-      - name: Copy index.html to 404.html (for SPAs)
+      - name: Copy index.html to 404.html (for SPA routing)
         run: cp dist/index.html dist/404.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GH_PAT }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          cname: mysimpledomain.com   # Change to your domain or remove line if not using one
+          cname: aliyaslittlescholars.com
           force_orphan: true
-
