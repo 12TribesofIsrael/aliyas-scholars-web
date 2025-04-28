@@ -143,15 +143,22 @@
 .swiper-slide {
   height: auto; /* Allow slides to size based on their content */
   transition: transform 0.3s ease;
+  background: transparent !important;
 }
 
 .swiper-slide img, .gallery-image {
   max-height: 100%;
   width: auto;
   margin: 0 auto;
+  background: transparent;
 }
 
 .swiper-wrapper {
   align-items: center; /* Center slides vertically */
   transition-timing-function: ease-out !important;
+}
+
+/* Remove gray background from AspectRatio in gallery */
+#gallery .bg-muted {
+  background-color: transparent !important;
 }

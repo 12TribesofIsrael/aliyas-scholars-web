@@ -100,7 +100,7 @@ export function PhotoGallery() {
               {galleryImages.map((image, index) => (
                 <div key={index} className="swiper-slide">
                   <div className="rounded-lg overflow-hidden shadow-lg">
-                    <AspectRatio ratio={4/3} className="bg-muted">
+                    <AspectRatio ratio={4/3} className="bg-white">
                       <img 
                         src={image.src} 
                         alt={image.alt} 
