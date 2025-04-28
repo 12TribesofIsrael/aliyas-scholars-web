@@ -18,11 +18,11 @@ export function Hero() {
       <div className="container relative z-20 text-white">
         <div className="max-w-2xl py-16 animate-fade-in">
           <h1 className="text-5xl md:text-6xl font-poppins font-extrabold mb-4">
-            Fun-Based Learning Starts Here.
+            Where fun is learning.
           </h1>
           
           <p className="text-lg md:text-xl mb-6">
-            At @aliyaslittlescholars, we create play‑rich environments that spark curiosity, 
+            At Aliyas Littles Scholars, we create play‑rich environments that spark curiosity, 
             encourage exploration, and help children grow in every way.
           </p>
           
