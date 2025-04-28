@@ -18,7 +18,7 @@ export function PhotoGallery() {
         modules: [Navigation, Pagination, Autoplay],
         slidesPerView: 1,
         spaceBetween: 20,
-        loop: isMobile,
+        loop: true,
         autoplay: {
           delay: 3000,
           disableOnInteraction: false,
@@ -36,8 +36,7 @@ export function PhotoGallery() {
             slidesPerView: 2,
           },
           1024: {
-            slidesPerView: isMobile ? 1 : 3,
-            loop: false,
+            slidesPerView: 3,
           },
         },
       });
@@ -64,10 +63,6 @@ export function PhotoGallery() {
     {
       src: "/lovable-uploads/88940063-add5-4bd9-83e9-0cc506e520b3.png",
       alt: "Happy baby playing on educational mat"
-    },
-    {
-      src: "/lovable-uploads/dbd94278-689e-4555-bb52-e7d5759b53c4.png",
-      alt: "Child with colorful educational mat"
     }
   ];
   
