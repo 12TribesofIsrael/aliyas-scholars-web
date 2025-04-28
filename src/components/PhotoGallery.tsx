@@ -1,5 +1,5 @@
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Swiper from "swiper";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -10,15 +10,27 @@ import { AspectRatio } from "./ui/aspect-ratio";
 
 export function PhotoGallery() {
   const swiperRef = useRef<HTMLDivElement>(null);
+  const swiperInstance = useRef<Swiper | null>(null);
   const isMobile = useIsMobile();
+  const [mounted, setMounted] = useState(false);
   
+  // Initialize Swiper
   useEffect(() => {
+    setMounted(true);
+    
     if (swiperRef.current) {
-      const swiper = new Swiper(swiperRef.current, {
+      // Destroy previous instance if it exists
+      if (swiperInstance.current) {
+        swiperInstance.current.destroy(true, true);
+      }
+      
+      // Create new Swiper instance
+      swiperInstance.current = new Swiper(swiperRef.current, {
         modules: [Navigation, Pagination, Autoplay],
         slidesPerView: 1,
         spaceBetween: 20,
         loop: true,
+        speed: 800, // Slow down transition for visibility
         autoplay: {
           delay: 3000,
           disableOnInteraction: false,
@@ -41,11 +53,21 @@ export function PhotoGallery() {
         },
       });
       
-      return () => {
-        swiper.destroy();
-      };
+      // Force update to ensure slides are properly positioned
+      setTimeout(() => {
+        if (swiperInstance.current) {
+          swiperInstance.current.update();
+        }
+      }, 100);
     }
-  }, [isMobile]);
+    
+    return () => {
+      if (swiperInstance.current) {
+        swiperInstance.current.destroy(true, true);
+        swiperInstance.current = null;
+      }
+    };
+  }, [isMobile, mounted]);
   
   const galleryImages = [
     {
@@ -71,45 +93,28 @@ export function PhotoGallery() {
       <div className="container">
         <h2 className="section-heading mb-12">Our Little Scholars at Play</h2>
         
-        <div className="grid">
-          {!isMobile && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="swiper-container">
+          {/* Always use Swiper for both mobile and desktop for consistent behavior */}
+          <div ref={swiperRef} className="swiper">
+            <div className="swiper-wrapper">
               {galleryImages.map((image, index) => (
-                <div key={index} className="rounded-lg overflow-hidden shadow-lg">
-                  <AspectRatio ratio={4/3} className="bg-muted">
-                    <img 
-                      src={image.src} 
-                      alt={image.alt} 
-                      className="w-full h-full object-contain"
-                    />
-                  </AspectRatio>
+                <div key={index} className="swiper-slide">
+                  <div className="rounded-lg overflow-hidden shadow-lg">
+                    <AspectRatio ratio={4/3} className="bg-muted">
+                      <img 
+                        src={image.src} 
+                        alt={image.alt} 
+                        className="w-full h-full object-contain"
+                      />
+                    </AspectRatio>
+                  </div>
                 </div>
               ))}
             </div>
-          )}
-          
-          {isMobile && (
-            <div ref={swiperRef} className="swiper">
-              <div className="swiper-wrapper">
-                {galleryImages.map((image, index) => (
-                  <div key={index} className="swiper-slide">
-                    <div className="rounded-lg overflow-hidden shadow-lg">
-                      <AspectRatio ratio={4/3} className="bg-muted">
-                        <img 
-                          src={image.src} 
-                          alt={image.alt} 
-                          className="w-full h-full object-contain"
-                        />
-                      </AspectRatio>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="swiper-pagination mt-6"></div>
-              <div className="swiper-button-prev"></div>
-              <div className="swiper-button-next"></div>
-            </div>
-          )}
+            <div className="swiper-pagination mt-6"></div>
+            <div className="swiper-button-prev"></div>
+            <div className="swiper-button-next"></div>
+          </div>
         </div>
       </div>
     </section>
