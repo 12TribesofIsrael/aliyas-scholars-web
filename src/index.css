@@ -108,3 +108,10 @@
 .swiper-pagination-bullet-active {
   @apply bg-daycare-red;
 }
+
+/* Gallery image styles */
+.swiper-slide img, .gallery-image {
+  max-height: 100%;
+  width: auto;
+  margin: 0 auto;
+}

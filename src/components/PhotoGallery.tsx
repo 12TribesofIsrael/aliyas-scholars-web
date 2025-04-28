@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from "react";
 import Swiper from "swiper";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -5,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { AspectRatio } from "./ui/aspect-ratio";
 
 export function PhotoGallery() {
   const swiperRef = useRef<HTMLDivElement>(null);
@@ -62,6 +64,10 @@ export function PhotoGallery() {
     {
       src: "/lovable-uploads/88940063-add5-4bd9-83e9-0cc506e520b3.png",
       alt: "Happy baby playing on educational mat"
+    },
+    {
+      src: "/lovable-uploads/dbd94278-689e-4555-bb52-e7d5759b53c4.png",
+      alt: "Child with colorful educational mat"
     }
   ];
   
@@ -75,11 +81,13 @@ export function PhotoGallery() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {galleryImages.map((image, index) => (
                 <div key={index} className="rounded-lg overflow-hidden shadow-lg">
-                  <img 
-                    src={image.src} 
-                    alt={image.alt} 
-                    className="w-full h-64 object-cover object-top"
-                  />
+                  <AspectRatio ratio={4/3} className="bg-muted">
+                    <img 
+                      src={image.src} 
+                      alt={image.alt} 
+                      className="w-full h-full object-contain"
+                    />
+                  </AspectRatio>
                 </div>
               ))}
             </div>
@@ -91,11 +99,13 @@ export function PhotoGallery() {
                 {galleryImages.map((image, index) => (
                   <div key={index} className="swiper-slide">
                     <div className="rounded-lg overflow-hidden shadow-lg">
-                      <img 
-                        src={image.src} 
-                        alt={image.alt} 
-                        className="w-full h-64 object-cover object-top"
-                      />
+                      <AspectRatio ratio={4/3} className="bg-muted">
+                        <img 
+                          src={image.src} 
+                          alt={image.alt} 
+                          className="w-full h-full object-contain"
+                        />
+                      </AspectRatio>
                     </div>
                   </div>
                 ))}
