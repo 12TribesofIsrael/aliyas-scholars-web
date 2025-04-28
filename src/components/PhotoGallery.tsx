@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from "react";
 import Swiper from "swiper";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -17,7 +16,7 @@ export function PhotoGallery() {
         modules: [Navigation, Pagination, Autoplay],
         slidesPerView: 1,
         spaceBetween: 20,
-        loop: isMobile, // Only enable loop on mobile
+        loop: isMobile,
         autoplay: {
           delay: 3000,
           disableOnInteraction: false,
@@ -36,7 +35,7 @@ export function PhotoGallery() {
           },
           1024: {
             slidesPerView: isMobile ? 1 : 3,
-            loop: false, // Explicitly disable loop on desktop
+            loop: false,
           },
         },
       });
@@ -47,8 +46,6 @@ export function PhotoGallery() {
     }
   }, [isMobile]);
   
-  // Removed images: "Social skills development", "Children doing water play", "Child playing in colorful tunnel", and any slides with no picture.
-  // Kept only main classroom and candid photos where heads are not cut off.
   const galleryImages = [
     {
       src: "/lovable-uploads/76340a11-bb0a-43de-8a24-d431853848aa.png",
@@ -61,8 +58,11 @@ export function PhotoGallery() {
     {
       src: "/lovable-uploads/6e26cb94-68a3-4b62-823e-e6b9cab3b359.png",
       alt: "Visit us today"
+    },
+    {
+      src: "/lovable-uploads/88940063-add5-4bd9-83e9-0cc506e520b3.png",
+      alt: "Happy baby playing on educational mat"
     }
-    // Retained only the slides where people are visible and heads are not cut off.
   ];
   
   return (
@@ -72,7 +72,6 @@ export function PhotoGallery() {
         
         <div className="grid">
           {!isMobile && (
-            // On desktop, display images in a standard grid without swiper
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {galleryImages.map((image, index) => (
                 <div key={index} className="rounded-lg overflow-hidden shadow-lg">
@@ -87,7 +86,6 @@ export function PhotoGallery() {
           )}
           
           {isMobile && (
-            // Only use swiper on mobile
             <div ref={swiperRef} className="swiper">
               <div className="swiper-wrapper">
                 {galleryImages.map((image, index) => (
