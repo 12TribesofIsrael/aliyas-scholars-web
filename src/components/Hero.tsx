@@ -18,7 +18,7 @@ export function Hero() {
       <div className="container relative z-20 text-white">
         <div className="max-w-2xl py-16 animate-fade-in">
           <h1 className="text-5xl md:text-6xl font-poppins font-extrabold mb-4">
-            Where fun is learning.
+            Where fun is learning!
           </h1>
           
           <p className="text-lg md:text-xl mb-6">
