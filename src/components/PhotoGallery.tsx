@@ -5,9 +5,11 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export function PhotoGallery() {
   const swiperRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     if (swiperRef.current) {
@@ -15,7 +17,7 @@ export function PhotoGallery() {
         modules: [Navigation, Pagination, Autoplay],
         slidesPerView: 1,
         spaceBetween: 20,
-        loop: true,
+        loop: isMobile, // Only enable loop on mobile
         autoplay: {
           delay: 3000,
           disableOnInteraction: false,
@@ -33,7 +35,8 @@ export function PhotoGallery() {
             slidesPerView: 2,
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: isMobile ? 1 : 3,
+            loop: false, // Explicitly disable loop on desktop
           },
         },
       });
@@ -42,7 +45,7 @@ export function PhotoGallery() {
         swiper.destroy();
       };
     }
-  }, []);
+  }, [isMobile]);
   
   // Removed images: "Social skills development", "Children doing water play", "Child playing in colorful tunnel", and any slides with no picture.
   // Kept only main classroom and candid photos where heads are not cut off.
@@ -67,23 +70,43 @@ export function PhotoGallery() {
       <div className="container">
         <h2 className="section-heading mb-12">Our Little Scholars at Play</h2>
         
-        <div ref={swiperRef} className="swiper">
-          <div className="swiper-wrapper">
-            {galleryImages.map((image, index) => (
-              <div key={index} className="swiper-slide">
-                <div className="rounded-lg overflow-hidden shadow-lg">
+        <div className="grid">
+          {!isMobile && (
+            // On desktop, display images in a standard grid without swiper
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {galleryImages.map((image, index) => (
+                <div key={index} className="rounded-lg overflow-hidden shadow-lg">
                   <img 
                     src={image.src} 
                     alt={image.alt} 
                     className="w-full h-64 object-cover object-top"
                   />
                 </div>
+              ))}
+            </div>
+          )}
+          
+          {isMobile && (
+            // Only use swiper on mobile
+            <div ref={swiperRef} className="swiper">
+              <div className="swiper-wrapper">
+                {galleryImages.map((image, index) => (
+                  <div key={index} className="swiper-slide">
+                    <div className="rounded-lg overflow-hidden shadow-lg">
+                      <img 
+                        src={image.src} 
+                        alt={image.alt} 
+                        className="w-full h-64 object-cover object-top"
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-          <div className="swiper-pagination mt-6"></div>
-          <div className="swiper-button-prev"></div>
-          <div className="swiper-button-next"></div>
+              <div className="swiper-pagination mt-6"></div>
+              <div className="swiper-button-prev"></div>
+              <div className="swiper-button-next"></div>
+            </div>
+          )}
         </div>
       </div>
     </section>
