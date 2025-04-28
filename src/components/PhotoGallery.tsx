@@ -48,6 +48,10 @@ export function PhotoGallery() {
   // Kept only main classroom and candid photos where heads are not cut off.
   const galleryImages = [
     {
+      src: "/lovable-uploads/4782802126642597472.jpg",
+      alt: "Child learning and playing"
+    },
+    {
       src: "/lovable-uploads/76340a11-bb0a-43de-8a24-d431853848aa.png",
       alt: "Children learning and playing"
     },
