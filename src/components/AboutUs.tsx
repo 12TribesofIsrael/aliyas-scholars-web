@@ -28,6 +28,33 @@ export function AboutUs() {
             </p>
           </div>
         </div>
+        
+        <div className="mt-16">
+          <h3 className="text-2xl font-poppins font-bold text-center mb-8 text-daycare-blue">Our Philosophy</h3>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="animate-on-scroll order-2 md:order-1">
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h4 className="text-xl font-poppins font-bold text-daycare-red mb-4">Empowering Daily Affirmations</h4>
+                <p className="text-lg mb-4">
+                  We believe in the power of positive affirmations to build confidence and self-esteem in young children.
+                  Every day, our little scholars recite these important words as part of our morning routine.
+                </p>
+                <p className="text-lg">
+                  These affirmations help children develop a growth mindset and believe in their abilities as they learn and grow.
+                  When children see themselves as smart, brave, important, and scholarly, they approach challenges with confidence.
+                </p>
+              </div>
+            </div>
+            
+            <div className="order-1 md:order-2 flex justify-center">
+              <img 
+                src="/lovable-uploads/28a2a699-96e2-473c-b862-32ba2df32cfc.png" 
+                alt="Motivational wall with colorful affirmations" 
+                className="rounded-lg shadow-lg max-w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
