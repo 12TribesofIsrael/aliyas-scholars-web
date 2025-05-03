@@ -1,5 +1,22 @@
 
-import { Facebook, Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
+import { Facebook, Instagram, Linkedin, MapPin, Phone, Mail, TiktokIcon } from "lucide-react";
+
+// Custom TikTok icon since Lucide doesn't have one
+const TikTok = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+  </svg>
+);
 
 export function Footer() {
   return (
@@ -59,6 +76,10 @@ export function Footer() {
             <p className="mb-4">Monday–Friday: 7 AM–5:30 PM</p>
             <p className="mb-2">Overnight Care:</p>
             <p>Monday–Friday: 11 PM–6:30 AM</p>
+            <div className="mt-4">
+              <p className="font-bold text-daycare-yellow">Ages Served:</p>
+              <p>Children 6 months - 13 years old</p>
+            </div>
           </div>
         </div>
         
@@ -82,7 +103,18 @@ export function Footer() {
             <Instagram className="w-5 h-5" />
           </a>
           <a 
-            href="#" 
+            href="https://www.tiktok.com/@aliyaslittlescholars" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors"
+            aria-label="TikTok"
+          >
+            <TikTok className="w-5 h-5" />
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/aliyas-little-scholars-daycare-985329363/" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors"
             aria-label="LinkedIn"
           >
