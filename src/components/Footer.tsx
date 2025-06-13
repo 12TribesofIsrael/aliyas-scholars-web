@@ -1,5 +1,5 @@
 
-import { MapPin, Phone, Mail, Clock, Linkedin } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Linkedin, Facebook, Instagram } from "lucide-react";
 import { AspectRatio } from "./ui/aspect-ratio";
 
 export function Footer() {
@@ -56,6 +56,22 @@ export function Footer() {
           <div>
             <h3 className="text-xl font-poppins font-bold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
+              <a 
+                href="https://www.facebook.com/aliyalittle.scholarsdaycare" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white text-daycare-blue p-3 rounded-full hover:bg-daycare-yellow hover:text-white transition-colors"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://www.instagram.com/aliyaslittlescholars" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white text-daycare-blue p-3 rounded-full hover:bg-daycare-yellow hover:text-white transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
               <a 
                 href="https://www.tiktok.com/@aliyaslittlescholars?_t=ZP-8w3Ltpy6HE7&_r=1" 
                 target="_blank" 
