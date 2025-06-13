@@ -48,9 +48,9 @@ export function AboutUs() {
             
             <div className="order-1 md:order-2 flex justify-center">
               <img 
-                src="/lovable-uploads/28a2a699-96e2-473c-b862-32ba2df32cfc.png" 
+                src="/lovable-uploads/05007f1b-14fe-4d4b-a2f5-97e2714c3923.png" 
                 alt="Motivational wall with colorful affirmations" 
-                className="rounded-lg shadow-lg max-w-full h-auto"
+                className="rounded-lg shadow-lg w-full max-w-md object-cover"
               />
             </div>
           </div>

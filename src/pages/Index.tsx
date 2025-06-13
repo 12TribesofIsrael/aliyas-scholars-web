@@ -7,6 +7,7 @@ import { ProgramHighlights } from "@/components/ProgramHighlights";
 import { PhotoGallery } from "@/components/PhotoGallery";
 import { HoursLocations } from "@/components/HoursLocations";
 import { EbookSection } from "@/components/EbookSection";
+import { Consultation } from "@/components/Consultation";
 import { Testimonials } from "@/components/Testimonials";
 import { Accreditations } from "@/components/Accreditations";
 import { EnrollmentForm } from "@/components/EnrollmentForm";
@@ -48,6 +49,7 @@ const Index = () => {
       <PhotoGallery />
       <HoursLocations />
       <EbookSection />
+      <Consultation />
       <Testimonials />
       <Accreditations />
       <EnrollmentForm />
