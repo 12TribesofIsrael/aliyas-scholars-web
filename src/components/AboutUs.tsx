@@ -48,8 +48,8 @@ export function AboutUs() {
             
             <div className="order-1 md:order-2 flex justify-center">
               <img 
-                src="/lovable-uploads/05007f1b-14fe-4d4b-a2f5-97e2714c3923.png" 
-                alt="Motivational wall with colorful affirmations" 
+                src="/lovable-uploads/5b0d2ad1-d154-4616-94fc-cb4ee0919109.png" 
+                alt="Daily affirmations: I am smart, I am brave, I am important, I am a scholar" 
                 className="rounded-lg shadow-lg w-full max-w-md object-cover"
               />
             </div>
