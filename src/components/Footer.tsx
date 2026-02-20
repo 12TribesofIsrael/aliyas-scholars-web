@@ -22,9 +22,12 @@ export function Footer() {
           <div>
             <h3 className="text-xl font-poppins font-bold mb-4">Contact Us</h3>
             <div className="space-y-3">
-              <div className="flex items-center">
-                <MapPin className="w-5 h-5 mr-3 text-daycare-yellow" />
-                <span>123 Learning Lane, Philadelphia, PA 19123</span>
+              <div className="flex items-start">
+                <MapPin className="w-5 h-5 mr-3 mt-1 text-daycare-yellow flex-shrink-0" />
+                <div>
+                  <p>1352 E. Lycoming St, Philadelphia PA 19124</p>
+                  <p>5934 Chestnut St, Philadelphia PA 19139</p>
+                </div>
               </div>
               <div className="flex items-center">
                 <Phone className="w-5 h-5 mr-3 text-daycare-yellow" />
