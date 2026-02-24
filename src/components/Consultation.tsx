@@ -79,7 +79,7 @@ export function Consultation() {
           <div className="animate-on-scroll flex justify-center">
             <div className="relative">
               <img 
-                src="/lovable-uploads/3ac854a1-c7e7-4d47-a03f-ec740a51808b.png" 
+                src="/lovable-uploads/consultation-photo.png" 
                 alt="Professional daycare consultant" 
                 className="rounded-2xl shadow-2xl max-w-sm w-full"
               />
