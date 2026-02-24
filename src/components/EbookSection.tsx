@@ -32,9 +32,9 @@ export function EbookSection() {
             </div>
             
             <div className="hidden md:block">
-              <img 
-                src="/lovable-uploads/35de25f8-341e-4179-8c43-a310e03ad048.png" 
-                alt="Children playing at Aliyas Little Scholars Daycare" 
+                <img 
+                src="/lovable-uploads/1240115513541405077.png" 
+                alt="Aliyas Little Scholars founder" 
                 className="w-full h-full object-cover"
               />
             </div>
