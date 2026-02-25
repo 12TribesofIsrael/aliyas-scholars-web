@@ -33,8 +33,8 @@ export function EbookSection() {
             
             <div className="hidden md:block">
               <img 
-                src="/lovable-uploads/35de25f8-341e-4179-8c43-a310e03ad048.png" 
-                alt="Children playing at Aliyas Little Scholars Daycare" 
+                src="/lovable-uploads/ebook-photo.png" 
+                alt="Author with The Childcare Bible book" 
                 className="w-full h-full object-cover"
               />
             </div>
