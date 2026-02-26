@@ -10,7 +10,7 @@ export function EbookSection() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="p-8 md:p-12">
               <h2 className="text-3xl md:text-4xl font-poppins font-extrabold text-white mb-4">
-                Start Your Own Daycare e-Book
+                The Childcare Bible: Your Guide to Starting a Daycare
               </h2>
               
               <p className="text-white/90 text-lg mb-6">
